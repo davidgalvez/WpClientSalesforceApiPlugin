@@ -1,0 +1,26 @@
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!wp-content/
+!.gitignore
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+wp-content/*
+!wp-content/plugins
+#!wp-content/themes/
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+wp-content/plugins/*
+# !wp-content/plugins/my-single-file-plugin.php
+# !wp-content/plugins/my-directory-plugin/
+!wp-content/plugins/wpSalesforceClientLoad
+
+#Ignore phpUnit testing files and folder
+!wp-content/plugins/wpSalesforceClientLoad/vendor
+wp-content/plugins/wpSalesforceClientLoad/.phpunit.result.cache
+wp-content/plugins/wpSalesforceClientLoad/composer.lock
+
+#Ignore node modules
+wp-content/plugins/wpSalesforceClientLoad/node_modules
+wp-content/plugins/wpSalesforceClientLoad/package-lock.json
