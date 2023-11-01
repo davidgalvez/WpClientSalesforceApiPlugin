@@ -1,0 +1,11 @@
+{
+    "name": "david/wp-salesforce-client-load",
+    "description": "Worpress plugin to integrate Salesforce cases creation with clients Api",
+    "license": "GPL",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"wpSfApiCli\\":"./inc"}
+    }
+
+}
