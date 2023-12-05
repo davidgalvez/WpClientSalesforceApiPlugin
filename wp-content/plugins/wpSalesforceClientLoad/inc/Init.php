@@ -16,9 +16,8 @@ final class Init{
             Pages\Admin::class,  
             Base\SettingsLinks::class, 
             Base\Roles::class,
-            /*Base\Taxonomies::class,      
-            Base\PostTypes::class,  
-            Base\ApiEndPoints::class,*/           
+            Base\PostTypes::class,
+            Base\ApiEndpoints::class                     
         ];
     }
 

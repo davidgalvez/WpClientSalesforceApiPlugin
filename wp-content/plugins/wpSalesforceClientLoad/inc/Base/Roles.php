@@ -32,9 +32,9 @@ class Roles extends PluginController
                 "capabilities"=>
                 [
                     "read"=>true,
-                    "edit_leadsAL"=>true,
-                    "publish_leadsAL"=>true,
-                    "edit_published_leadsAL"=>true
+                    "edit_sfClient"=>true,
+                    "publish_sfClient"=>true,
+                    "edit_published_sfClient"=>true
                 ]
             ]
         ];
@@ -88,17 +88,17 @@ class Roles extends PluginController
     {
         $adminRole=get_role("administrator");
             $adminRole->add_cap( 'read' );
-			$adminRole->add_cap( 'edit_leadsAL' );
-			$adminRole->add_cap( 'publish_leadsAL' );
-			$adminRole->add_cap( 'edit_published_leadsAL' );
-			$adminRole->add_cap( 'edit_others_leadsAL' );
-            $adminRole->add_cap( 'read_private_leadsAL' );
-			$adminRole->add_cap( 'edit_others_leadsAL' );
-			$adminRole->add_cap( 'edit_private_leadsAL' );
-			$adminRole->add_cap( 'delete_leadsAL' );
-			$adminRole->add_cap( 'delete_published_leadsAL' );
-			$adminRole->add_cap( 'delete_private_leadsAL' );
-			$adminRole->add_cap( 'delete_others_leadsAL' );
+			$adminRole->add_cap( 'edit_sfClient' );
+			$adminRole->add_cap( 'publish_sfClient' );
+			$adminRole->add_cap( 'edit_published_sfClient' );
+			$adminRole->add_cap( 'edit_others_sfClient' );
+            $adminRole->add_cap( 'read_private_sfClient' );
+			$adminRole->add_cap( 'edit_others_sfClient' );
+			$adminRole->add_cap( 'edit_private_sfClient' );
+			$adminRole->add_cap( 'delete_sfClient' );
+			$adminRole->add_cap( 'delete_published_sfClient' );
+			$adminRole->add_cap( 'delete_private_sfClient' );
+			$adminRole->add_cap( 'delete_others_sfClient' );
 
     }
 
@@ -106,32 +106,32 @@ class Roles extends PluginController
     {
         $server = rest_get_server();
         $routes = $server->get_routes();
-        if(isset($routes["/leadsAL/v1"])) return;
+        if(isset($routes["/sfClient/v1"])) return;
         if(get_role('sf_case_loader')===NULL) return;
         $adminRole=get_role("administrator");           
-			$adminRole->remove_cap( 'edit_leadsAL' );
-			$adminRole->remove_cap( 'publish_leadsAL' );
-			$adminRole->remove_cap( 'edit_published_leadsAL' );
-			$adminRole->remove_cap( 'edit_others_leadsAL' );
-            $adminRole->remove_cap( 'read_private_leadsAL' );
-			$adminRole->remove_cap( 'edit_others_leadsAL' );
-			$adminRole->remove_cap( 'edit_private_leadsAL' );
-			$adminRole->remove_cap( 'delete_leadsAL' );
-			$adminRole->remove_cap( 'delete_published_leadsAL' );
-			$adminRole->remove_cap( 'delete_private_leadsAL' );
-			$adminRole->remove_cap( 'delete_others_leadsAL' );
+			$adminRole->remove_cap( 'edit_sfClient' );
+			$adminRole->remove_cap( 'publish_sfClient' );
+			$adminRole->remove_cap( 'edit_published_sfClient' );
+			$adminRole->remove_cap( 'edit_others_sfClient' );
+            $adminRole->remove_cap( 'read_private_sfClient' );
+			$adminRole->remove_cap( 'edit_others_sfClient' );
+			$adminRole->remove_cap( 'edit_private_sfClient' );
+			$adminRole->remove_cap( 'delete_sfClient' );
+			$adminRole->remove_cap( 'delete_published_sfClient' );
+			$adminRole->remove_cap( 'delete_private_sfClient' );
+			$adminRole->remove_cap( 'delete_others_sfClient' );
         $loaderRole=get_role('sf_case_loader');
             $loaderRole->remove_cap( 'read' );
-            $loaderRole->remove_cap( 'edit_leadsAL' );
-            $loaderRole->remove_cap( 'publish_leadsAL' );
-            $loaderRole->remove_cap( 'edit_published_leadsAL' );  
+            $loaderRole->remove_cap( 'edit_sfClient' );
+            $loaderRole->remove_cap( 'publish_sfClient' );
+            $loaderRole->remove_cap( 'edit_published_sfClient' );  
     }
 
     public static function removeRol()
     {     
         $server = rest_get_server();
         $routes = $server->get_routes();
-        if(isset($routes["/leadsAL/v1"])) return;        
+        if(isset($routes["/sfClient/v1"])) return;        
         if(get_role('sf_case_loader')===NULL) return;   
         remove_role("sf_case_loader","Sf Case loader");
 	}
